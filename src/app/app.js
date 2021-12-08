@@ -13,7 +13,8 @@ import Footer from "./commonComponent/footerComponent";
 import Home from "./commonComponent/homeComponent";
 import NotFound from "./commonComponent/notFoundComponent";
 import About from "./commonComponent/aboutComponent"
-import MyComponent from "./commonComponent/myComponent"
+import MyComponent from "./commonComponent/myComponent";
+import HookUsage from "./hooks/HookUsage";
 
 export default class AppComponent extends Component {
     constructor(props, context){
@@ -25,7 +26,7 @@ export default class AppComponent extends Component {
             <Router>
                 <Header/>
                     <Routes>
-                        <Route path="/" element={<Home headerName={"HomeComponent from App Component /"} />} /> 
+                        <Route path="/" element={<HookUsage />} /> 
                         <Route path="/home" element={<Home headerName={"Home from App Component"} />} />
                         <Route path="/about" element={<About/>} />
                         <Route path="/about/:id" element={<About/>}/>

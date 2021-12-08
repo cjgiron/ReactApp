@@ -1,20 +1,25 @@
 import React, {Fragment, PureComponent} from "react";
 import PropTypes from "prop-types";
 import DummyComponent from "./dummyComponent";
+import {useNavigate} from "react-router-dom"
 
 // var ObjVehicle = new Vehicle({});
 // ObjVehicle.getDetails();//details
 
-// export default class Home extends PureComponent{ //has in-built implementation of shouldComponentUpdate and does comparison of each state 
+export default class Home extends PureComponent{ //has in-built implementation of shouldComponentUpdate and does comparison of each state 
     // in cases where state contains large, nested objects pure component is not ideal because it automatically compares those object attributes, creating lots of overhead
-export default class Home extends React.Component{
+// export default class Home extends React.Component{
 
     constructor (props, context ) {
         super(props)
         this.state = {
             headerNameForChild : "Header Name From Home Component",
             textBoxValue : "This is a text box",
-            name : "Yourui"
+            name : "default Name",
+            address: "default address",
+            age: 66,
+            session: "default Session",
+            color: "default color"
         }
 
         //ref - keyword uses
@@ -22,6 +27,9 @@ export default class Home extends React.Component{
         // this.inputAddress.current.focus(); //view can't be accessed in constructor
 
         this.inputAge = React.createRef();
+
+        this.inputSession = React.createRef();
+        this.inputColor = React.createRef();
     }
 
     //creation life cycle method // this componentDidMount runs after the render method runs, then you can access the HTML
@@ -43,13 +51,13 @@ export default class Home extends React.Component{
 
      //update lifecycle method
     //this asks us to decide whether we need to stop calling the render method on state change
-    // shouldComponentUpdate(nextState, nextProps) { // purpose is to stop unnecessary re-rendering 
+    // shouldComponentUpdate(nextProps, nextState) { // purpose is to stop unnecessary re-rendering 
     //     console.log("shouldComponentUpdate");
     //     console.log("nextState",nextState);
     //     console.log("nextProps", nextProps);
 
     //     //return true;
-    //     if (nextProps.name == this.state.name) {
+    //     if (nextState.name == this.state.name) {
     //         return false; //to not call the render method
     //     } else {
     //         return true;    
@@ -62,7 +70,7 @@ export default class Home extends React.Component{
     //     console.log("prevProps", prevProps);
     //     return {
     //         prevState,
-    //         prevProps
+    //         prevProps    
     //     }
     // }
 
@@ -121,6 +129,30 @@ export default class Home extends React.Component{
         })
     }
 
+    goToAbout = () => {
+        //let history = useNavigate();
+        useNavigate("/about");
+    }
+
+    onSubmit = (evt) => {
+        // alert("Form Submitted!")
+        let age = this.inputAge.current.value;
+        let address = this.inputAddress.current.value;
+
+        let session = this.inputSession.current.value;
+        let color = this.inputColor.current.value;
+
+        this.setState ({
+            age,
+            address,
+            session,
+            color
+        })
+
+        evt.preventDefault();
+    }
+
+
 
     render () { // render is a life cycle hook, every time we make a change, re-render is triggered
         console.log("Home Render")
@@ -129,10 +161,10 @@ export default class Home extends React.Component{
                 <h1>Header Name - {this.props.headerName}</h1>
                 <h1>Child Header Name - {this.state.headerNameForChild}</h1>
                 <input type="text" value={this.state.textBoxValue} onChange={this.changeEventHandler} />
-                <label>
+                {/* <label>
                     Address:
                     <input type="text" ref={this.inputAddress} placeholder="Please enter address"/>
-                </label>
+                </label> */}
 
 
                 {/* An input form element whose value is controlled by React in this way is called a “controlled component”. */}
@@ -141,8 +173,43 @@ export default class Home extends React.Component{
                             value={this.state.name} 
                             onChange={this.changeNameOnType}/>
 
-                    <button className={"form-control btn btn-primary col-md-2"} 
-                        onClick={this.updateNameEvent}>Update Name</button>
+                    {/* <button className={"form-control btn btn-primary col-md-2"} 
+                        onClick={this.updateNameEvent}>Update Name</button> */}
+
+                    {/* We are going to create an uncontrolled html form with html elements, 
+                it is controlled element values are not going to be part of react state */}
+
+                    <form onSubmit={this.onSubmit}>
+                        <label>
+                            Age:
+                            <input type="text" ref={this.inputAge} placeholder="Please enter age"/>
+                        </label>
+
+                        <label>
+                            Address:
+                            <input type="text" ref={this.inputAddress} placeholder="Please enter address"/>
+                        </label>
+
+                        <label>
+                            Session:
+                            <input type="text" ref={this.inputSession} placeholder="Please enter session"/>
+                        </label>
+
+                        <label>
+                            Color:
+                            <input type="text" ref={this.inputColor} placeholder="Please enter color"/>
+                        </label>
+
+                        <input type="submit" value="Submit" />
+
+                        <label>
+                            Age: {this.state.age}<br/>
+                            Address: {this.state.address}<br/>
+                            Session: {this.state.session}<br/>
+                            Color: {this.state.color}<br/>
+                        </label>
+                    </form>
+
                 <DummyComponent headerName={this.state.headerNameForChild} getData={this.getDataFromChild}/>
             </Fragment>
         )
