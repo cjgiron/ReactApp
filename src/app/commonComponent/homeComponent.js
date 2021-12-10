@@ -1,7 +1,7 @@
 import React, {Fragment, PureComponent} from "react";
 import PropTypes from "prop-types";
 import DummyComponent from "./dummyComponent";
-import {useNavigate} from "react-router-dom"
+
 
 // var ObjVehicle = new Vehicle({});
 // ObjVehicle.getDetails();//details
@@ -129,10 +129,6 @@ export default class Home extends PureComponent{ //has in-built implementation o
         })
     }
 
-    goToAbout = () => {
-        //let history = useNavigate();
-        useNavigate("/about");
-    }
 
     onSubmit = (evt) => {
         // alert("Form Submitted!")
@@ -173,8 +169,8 @@ export default class Home extends PureComponent{ //has in-built implementation o
                             value={this.state.name} 
                             onChange={this.changeNameOnType}/>
 
-                    {/* <button className={"form-control btn btn-primary col-md-2"} 
-                        onClick={this.updateNameEvent}>Update Name</button> */}
+                    <button className={"form-control btn btn-primary col-md-2"} 
+                        onClick={this.updateNameEvent}>Update Name</button>
 
                     {/* We are going to create an uncontrolled html form with html elements, 
                 it is controlled element values are not going to be part of react state */}

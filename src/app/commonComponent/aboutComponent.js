@@ -1,9 +1,19 @@
 import React, {Fragment} from "react";
-import {useParams} from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
 
 let About = (props)=>{
     let params = useParams();
     let param = params["id"] ? params["id"]: "No Params"; 
+
+    let navigate = useNavigate();
+
+    let func = function(event) {
+        event.preventDefault();
+
+        navigate('/user');
+    }
+
 
     return(
         <div className="about" >  
@@ -15,6 +25,8 @@ let About = (props)=>{
                 we can help you get where you want to go in your career.  
             </p>  
             <p>id = {param}</p>
+            <button className={"form-control btn btn-primary col-md-2"} 
+                    onClick={func}>Go To User</button>
         </div>
     )
 }
