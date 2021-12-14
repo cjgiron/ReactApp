@@ -8,6 +8,7 @@ import thunk from "redux-thunk"; //is used to pipeline the dispatched objects an
 import promise from "redux-promise-middleware";//is used to make calls to the server using promise
 
 import userReducer from "./user/userReducer";
+import studentReducer from "./student/studentReducer";
 //import productReducer from "./product/productReducer";
 
 let logger = () => (next) => (action) => {
@@ -19,7 +20,8 @@ let logger = () => (next) => (action) => {
 
 export default createStore(
     combineReducers({
-        userReducer //userReducer : userReducer
+        userReducer, //userReducer : userReducer
+        studentReducer
     }),
     {},//inital state if we want to set from store instead of reducer
     applyMiddleware(logger, thunk, promise)

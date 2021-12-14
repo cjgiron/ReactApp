@@ -17,6 +17,10 @@ import MyComponent from "./commonComponent/myComponent";
 import HookUsage from "./hooks/HookUsage";
 // import User from "./applicationcomponents/Components/User/UserComponent.js";
 import User from "./applicationcomponents/Container/UserContainer";
+// import UserComponent from "./applicationcomponents/Components/User/UserComponentHooks";
+import Student from "./applicationcomponents/Container/StudentContainer";
+
+
 
 export default class AppComponent extends Component {
     constructor(props, context){
@@ -29,11 +33,13 @@ export default class AppComponent extends Component {
                 <Header/>
                     <Routes>
                         {/* <Route path="/" element={<HookUsage />} /> */}
-                        <Route path="/" element={<User />} /> 
-                        <Route path="/user" element={<User />} />  
-                        <Route path="/home" element={<Home headerName={"Home from App Component"} />} />
+                        <Route path="/student" element={<Student />} />  
+                        <Route path="/" element={<Home />} /> 
+                        <Route path="/user" element={<User />} /> 
+                        {/* <Route path="/user" element={<UserComponent />} /> */}
                         <Route path="/about" element={<About/>} />
                         <Route path="/about/:id" element={<About/>}/>
+                        <Route path="/home" element={<Home headerName={"Home from App Component"} />} />
                         <Route path="*" element={<NotFound/>} />
                         <Route path="/myComponent" element={<MyComponent/>} />
                         <Route path="/myComponent/:name" element={<MyComponent/>} />

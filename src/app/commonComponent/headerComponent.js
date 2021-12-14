@@ -3,10 +3,12 @@ import {NavLink} from "react-router-dom";
 import { connect } from "react-redux"
 
 let Header = (props) => {
-    let userName = props.userName ? props.userName : "Default User Name"
+    let header = props.userName ? `Hi ${props.userName}, Welcome to SynergisticIT Shopping Cart` : "Hi There! Please Login to see other features";
+    let name = props.name ? props.name : "Default Student Name";
     return (
         <>
-            <h3>userName - {userName}</h3>
+            <h1>{header}</h1>
+            <h3>Student Name - {name}</h3>
             <NavLink to="/home" className="button" >Home</NavLink>
             <NavLink to="/user" className="button"  >User</NavLink> 
             <NavLink to="/about" className="button" >About</NavLink> 
@@ -18,7 +20,8 @@ let Header = (props) => {
 
 let mapStateToProps = (state)=>{
     return {
-        userName : state.userReducer.user.userName
+        userName : state.userReducer.user.userName,
+        name : state.studentReducer.student.name
     }
 }
 
