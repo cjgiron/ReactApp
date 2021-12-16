@@ -17,9 +17,11 @@ import MyComponent from "./commonComponent/myComponent";
 import HookUsage from "./hooks/HookUsage";
 // import User from "./applicationcomponents/Components/User/UserComponent.js";
 import User from "./applicationcomponents/Container/UserContainer";
-// import UserComponent from "./applicationcomponents/Components/User/UserComponentHooks";
+import UserComponent from "./applicationcomponents/Components/User/UserComponentHooks";
 import Student from "./applicationcomponents/Container/StudentContainer";
-
+import ProductComponent from "./applicationcomponents/Components/Product/ProductComponent";
+import DisplayProduct from "./applicationcomponents/Components/Product/DisplayProduct";
+import CartComponent from "./applicationcomponents/Components/Cart/CartComponent"
 
 
 export default class AppComponent extends Component {
@@ -35,8 +37,11 @@ export default class AppComponent extends Component {
                         {/* <Route path="/" element={<HookUsage />} /> */}
                         <Route path="/student" element={<Student />} />  
                         <Route path="/" element={<Home />} /> 
-                        <Route path="/user" element={<User />} /> 
-                        {/* <Route path="/user" element={<UserComponent />} /> */}
+                        {/* <Route path="/user" element={<User />} />  */}
+                        <Route path="/product" element={<ProductComponent />} /> 
+                        {/* <Route path="/displayProd" element={<DisplayProduct />} />  */}
+                        <Route path="/user" element={<UserComponent />} />
+                        <Route path="/cart" element={<CartComponent/>} />
                         <Route path="/about" element={<About/>} />
                         <Route path="/about/:id" element={<About/>}/>
                         <Route path="/home" element={<Home headerName={"Home from App Component"} />} />

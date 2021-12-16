@@ -1,0 +1,15 @@
+/* .myHeader {
+    display: flex;
+    justify-content: space-between;
+    column-count: 4;
+} */
+
+.quantity {
+    outline: 1px solid black;
+}
+
+/* .itemInfo {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+} */

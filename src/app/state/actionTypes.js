@@ -5,3 +5,8 @@ export const AddUserToStore = "USER.AddUserToStore";
 
 //For Student
 export const AddStudentToStore = "STUDENT.AddStudentToStore";
+
+//For Product
+export const ADD_PRODUCTS_TOSTORE = "PRODUCT.ADD_PRODUCTS_TOSTORE";
+export const FETCH_PRODUCTS_FULFILLED = "PRODUCT.FETCH_PRODUCTS_FULFILLED";
+export const FETCH_PRODUCTS_REJECTED = "PRODUCT.FETCH_PRODUCTS_REJECTED";

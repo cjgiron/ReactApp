@@ -17,7 +17,7 @@ let UserComponent = (props)=>{
 
     // this hook is used to replace map dispatch to props so that we are able to 
     // make our functional component publish the new data
-    //this hook is used to do the job of mapDispatchToProps, we need to initilize it and then use it on handler
+    //this hook is used to do the job of mapDispatchToProps, we need to initialize it and then use it on handler
     const dispatchUserObj = useDispatch();
 
     const setInt= setInterval(() => {

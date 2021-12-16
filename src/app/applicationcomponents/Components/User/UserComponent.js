@@ -20,7 +20,7 @@ export default class User extends Component {
 
         let classList = target.classList;
 
-        console.log("classlist ", classList)
+        // console.log("classlist ", classList)
 
         if(classList.contains("username")){
             this.setState({
