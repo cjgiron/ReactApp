@@ -7,7 +7,7 @@ let INITIAL_STATE = {
         price : 2.2,
         desc : "Product Description 2.3",
         rating : "Product Rating 2.4",
-        quantity: 1
+        category: "Category 2.5"
     }
 }
 

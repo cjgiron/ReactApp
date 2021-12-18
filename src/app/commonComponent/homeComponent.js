@@ -153,17 +153,36 @@ export default class Home extends PureComponent{ //has in-built implementation o
     render () { // render is a life cycle hook, every time we make a change, re-render is triggered
         console.log("Home Render")
         return (
-            <Fragment>
+            <div className={"loadimage form"} style={{backgroundImage: "url(/images/hm_pic4.jpg)"}}>
+            {/* <p>{this.state.name}</p> */}
+            {/* <img src={"./images/hm_pic4.jpg"} /> */}
+            {/* {this.state.Title} */}
+            <b className="feature">{"Below Feature's We've Implemented in our project :"}</b>
+            <ul>                     
+                <li>Sign up new users</li>
+                <li>Login existing users.</li>
+                <li>Add products/items to create product collection.</li>
+                <li>Allow user's to add to cart.</li>
+                <li>Save the user's cart.</li>
+                <li>Checkout and pay for items.</li>
+                <li>Allow users to cancel the order.</li>
+                <li>Allow users to reorder the cart.</li>
+                <li>Allow users to give ratings to each product.</li>
+                <li>Have notifications on top right with logout.</li>
+            </ul>
+
+            
+            {/* <Fragment>
                 <h1>Header Name - {this.props.headerName}</h1>
                 <h1>Child Header Name - {this.state.headerNameForChild}</h1>
                 <input type="text" value={this.state.textBoxValue} onChange={this.changeEventHandler} />
-                {/* <label>
+                {<label>
                     Address:
                     <input type="text" ref={this.inputAddress} placeholder="Please enter address"/>
-                </label> */}
+                </label> }
 
 
-                {/* An input form element whose value is controlled by React in this way is called a “controlled component”. */}
+                { An input form element whose value is controlled by React in this way is called a “controlled component”. }
 
                     <input type="text" placeholder="Please enter your name" 
                             value={this.state.name} 
@@ -172,8 +191,8 @@ export default class Home extends PureComponent{ //has in-built implementation o
                     <button className={"form-control btn btn-primary col-md-2"} 
                         onClick={this.updateNameEvent}>Update Name</button>
 
-                    {/* We are going to create an uncontrolled html form with html elements, 
-                it is controlled element values are not going to be part of react state */}
+                    {We are going to create an uncontrolled html form with html elements, 
+                it is controlled element values are not going to be part of react state }
 
                     <form onSubmit={this.onSubmit}>
                         <label>
@@ -207,7 +226,9 @@ export default class Home extends PureComponent{ //has in-built implementation o
                     </form>
 
                 <DummyComponent headerName={this.state.headerNameForChild} getData={this.getDataFromChild}/>
-            </Fragment>
+            </Fragment>  */}
+
+            </div>
         )
     }
 }

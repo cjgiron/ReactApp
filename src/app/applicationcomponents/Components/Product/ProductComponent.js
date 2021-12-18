@@ -13,10 +13,10 @@ let ProductComponent = ()=>{
     const [price, setPrice] = useState(defaultProduct.price);
     const [desc, setDescription] = useState(defaultProduct.desc);
     const [rating, setRating] = useState(defaultProduct.rating); // now changing state, not using useRef
-    const [quantity, setQuantity] = useState(defaultProduct.quantity);
+    const [category, setCategory] = useState(defaultProduct.category);
 
     const saveProductClick = (evt) => {
-        let productObj = {name, price, desc, rating, quantity};
+        let productObj = {name, price, desc, rating, category};
         alert("We are going to save this product - "+ JSON.stringify(productObj));
 
         dispatchToSaveProduct(saveProduct(productObj))
@@ -57,10 +57,10 @@ let ProductComponent = ()=>{
                     </div>
 
                     <div className="col-md-12">
-                        <b>Quantity</b>
-                    <input type="text" className="form-control col-md-6" value={quantity} 
-                        placeholder="Quantity"
-                        onChange={(evt)=>setQuantity(evt.target.value)} />
+                        <b>Category</b>
+                    <input type="text" className="form-control col-md-6" value={category} 
+                        placeholder="Please Describe the product"
+                        onChange={(evt)=>setCategory(evt.target.value)} />
                     </div>
 
                     <input type="button" className={"form-control btn btn-primary col-md-3"} 

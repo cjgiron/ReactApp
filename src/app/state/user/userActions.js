@@ -2,6 +2,7 @@
 //type : action type and payload : object that we want to update in reducer for new state (userObject)
 
 import * as ActionTypes from "../actionTypes";
+import { getUserCart } from "../cart/cartActions";
 
 //action that would be dispatched to the store (eventually to reducer)
 export const addUserToStore = (user) => ({    //user : is the user object dispatched from user component    
@@ -11,15 +12,13 @@ export const addUserToStore = (user) => ({    //user : is the user object dispat
 
 //we'll use react fetch api to make ajax post call to server to signup and signin user
 export const signinUser = (userObject)=>{
-
     // thunk, returns function as an action
     return function (dispatch, getState) {
         // here we go with ajax call : to save data to the server or fetch it from the server
         // using fetch method of react
         console.log("called by thunk");
         //dispatch(loading(true));
-        window.fetch("http://localhost:9090/user/api/signinup",//uri or end point of singninup api // localhost:9090 is like microsoftAPI and 
-        // localhost:9092 is like google application
+        window.fetch("http://localhost:9090/user/api/signinup",//uri or end point of singninup api
             {
                 method: 'POST', //rest method type to save the data
                 headers: {
@@ -34,12 +33,10 @@ export const signinUser = (userObject)=>{
                 let action = addUserToStore(userresp);
                 dispatch(action); // it will keep the current context to update the user object and takes it to the reducer
 
-                //dispatch(loading(false));
-                //dispatch(getUserCart(userresp._id));
+                dispatch(getUserCart(userresp._id));
             })
             .catch((err)=>{
                 console.log("Error While Login", err)
             });
     }
-
-} 
+}
