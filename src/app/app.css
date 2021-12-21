@@ -369,6 +369,23 @@ color: darkgreen;
 background: lightgoldenrodyellow;
 text-align: center;
 }
+
+.generateCoupon {
+display:inline-block;
+padding: auto;
+margin: auto;
+/* border-radius:0.15em; */
+outline: green;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:400;
+color:#FFFFFF;
+background-color: green;
+text-align:center;
+position:relative;
+}
+
 .headerPage{
 border: 1px solid grey;
 font-weight: bold;

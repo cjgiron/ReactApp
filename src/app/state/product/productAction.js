@@ -7,7 +7,7 @@ export const saveProduct = (product)=>{
     return function (dispatch) {
         //dispatch(loading(true));
 
-        window.fetch("http://localhost:9090/product/api/saveProduct",{
+        window.fetch("http://localhost:9090/product/api/saveproduct",{
             method: 'POST', //rest method type 
             headers: {
                 'Accept': 'application/json',

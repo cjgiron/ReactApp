@@ -6,6 +6,7 @@ import DisplayProduct from "./DisplayProduct";
 let ProductComponent = ()=>{
 
     const defaultProduct = useSelector((state)=>state.productReducer.defaultProduct)
+    const user = useSelector((state) => state.userReducer.user)
     const dispatchToSaveProduct = useDispatch()
 
     //initializes the name and returns a callback to save name on state change
@@ -17,8 +18,8 @@ let ProductComponent = ()=>{
 
     const saveProductClick = (evt) => {
         let productObj = {name, price, desc, rating, category};
-        alert("We are going to save this product - "+ JSON.stringify(productObj));
 
+        alert("We are going to save this product - "+ JSON.stringify(productObj));
         dispatchToSaveProduct(saveProduct(productObj))
 
         evt.preventDefault()
@@ -63,9 +64,12 @@ let ProductComponent = ()=>{
                         onChange={(evt)=>setCategory(evt.target.value)} />
                     </div>
 
-                    <input type="button" className={"form-control btn btn-primary col-md-3"} 
-                        value={"Save Product"} 
-                        onClick={saveProductClick}/>
+                    {user.userName == "Admin" ? 
+                        <input type="button" className={"form-control btn btn-primary col-md-3"} 
+                            value={"Save Product"} 
+                            onClick={saveProductClick}/>
+                        : ""
+                    }
                     </div>
                 <br/>
                 <DisplayProduct /> 

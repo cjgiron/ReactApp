@@ -23,6 +23,7 @@ import ProductComponent from "./applicationcomponents/Components/Product/Product
 import DisplayProduct from "./applicationcomponents/Components/Product/DisplayProduct";
 import Cart from "./applicationcomponents/Components/Cart/CartComponent"
 import Checkout from "./applicationcomponents/Components/Cart/CheckoutComponent";
+import Coupon from "./applicationcomponents/Components/Coupon/CouponComponent";
 
 
 export default class AppComponent extends Component {
@@ -42,6 +43,7 @@ export default class AppComponent extends Component {
                         <Route path="/product" element={<ProductComponent />} /> 
                         {/* <Route path="/displayProd" element={<DisplayProduct />} />  */}
                         <Route path="/user" element={<UserComponent />} />
+                        <Route path="/coupon" element={<Coupon />} />
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/about" element={<About/>} />

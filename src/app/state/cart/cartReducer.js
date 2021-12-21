@@ -3,7 +3,7 @@ import * as ActionTypes from "../actionTypes";
 const INITIAL_STATE = []; //instead of objet in array we are directly putting array
 
 export default function CartReducer(state = INITIAL_STATE, action) {
-    console.log("cart Reducer", state, action);
+    // console.log("cart Reducer", state, action);
     // additem, removeitem, updateitem, emptyitem
 
 
