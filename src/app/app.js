@@ -24,6 +24,7 @@ import DisplayProduct from "./applicationcomponents/Components/Product/DisplayPr
 import Cart from "./applicationcomponents/Components/Cart/CartComponent"
 import Checkout from "./applicationcomponents/Components/Cart/CheckoutComponent";
 import Coupon from "./applicationcomponents/Components/Coupon/CouponComponent";
+import RecentOrders from "./applicationcomponents/Components/Order/RecentOrdersComponent";
 
 
 export default class AppComponent extends Component {
@@ -46,6 +47,7 @@ export default class AppComponent extends Component {
                         <Route path="/coupon" element={<Coupon />} />
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="/cart" element={<Cart />} />
+                        <Route path="/orders" element={<RecentOrders />} />
                         <Route path="/about" element={<About/>} />
                         <Route path="/about/:id" element={<About/>}/>
                         <Route path="/home" element={<Home headerName={"Home from App Component"} />} />

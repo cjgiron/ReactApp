@@ -13,6 +13,7 @@ import studentReducer from "./student/studentReducer";
 import productReducer from "./product/productReducer";
 import cartReducer from "./cart/cartReducer";
 import couponReducer from "./coupon/couponReducer";
+import orderReducer from "./order/OrderReducer";
 
 
 let logger = () => (next) => (action) => {
@@ -28,7 +29,8 @@ export default createStore(
         studentReducer,
         productReducer,
         cartReducer,
-        couponReducer
+        couponReducer,
+        orderReducer
     }),
     {},//inital state if we want to set from store instead of reducer
     applyMiddleware(logger, thunk, promise)

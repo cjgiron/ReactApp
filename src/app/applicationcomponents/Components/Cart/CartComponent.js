@@ -39,7 +39,7 @@ let CartComponent = (props) => {
 
 
     let navigate = useNavigate();
-    let func = (evt) => {
+    let goToCheckout = (evt) => {
 
         navigate('/checkout')
 
@@ -95,7 +95,7 @@ let CartComponent = (props) => {
                                     Save For Checkout
                             </button>
 
-                            <button onClick={func} >
+                            <button onClick={goToCheckout} >
                                 Go To Checkout
                             </button>
                         </Fragment> 

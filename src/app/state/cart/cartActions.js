@@ -73,7 +73,7 @@ export const getUserCart = (userid) => {
 
         })
         .catch((err)=>{
-            console.log("Error While Login", err)
+            console.log("Error While getting cart", err)
         })  
     }       
 } 

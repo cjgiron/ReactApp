@@ -14,6 +14,7 @@ let Header = (props) => {
             <Fragment>
                 <NavLink to="/product" className="button" >Product </NavLink>  
                 <NavLink to="/cart" className="button" >Cart</NavLink>
+                <NavLink to="/orders" className="button" >Recent Orders</NavLink>
                 <NavLink to="/coupon" className="button" >Coupon</NavLink>
                 <NavLink to="/myComponent" className="button" >My Component</NavLink>
             </Fragment>
