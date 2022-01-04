@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
+import { saveNotification } from "../../../state/notification/notificationActions";
 import { addUserToStore, signinUser } from "../../../state/user/userActions"
 
 
@@ -19,6 +19,7 @@ let UserComponent = (props)=>{
     // make our functional component publish the new data
     //this hook is used to do the job of mapDispatchToProps, we need to initialize it and then use it on handler
     const dispatchUserObj = useDispatch();
+    const dispatchNotificationObj = useDispatch();
 
     const setInt= setInterval(() => {
         console.log("My name is Something")
@@ -50,9 +51,6 @@ let UserComponent = (props)=>{
             street : inputStreet.current.value,
             mobile : inputMobile.current.value
         }
-        //alert("User Object :" + JSON.stringify(userObj))
-
-        //dispatchUserObj(addUserToStore(userObj));
 
         // this hook is used to replace map dispatch to props so that we are able to 
         // make our functional component publish the new data
@@ -63,7 +61,7 @@ let UserComponent = (props)=>{
 
     return(
         <>
-            <h1>User Component Hook</h1>
+            <h1>Login Page</h1>
             <form className={"form col-md-10 userHook"} onSubmit={handleSubmit}>                
                 <label>
                     <b>User Name :</b>

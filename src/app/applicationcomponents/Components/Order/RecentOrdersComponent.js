@@ -8,6 +8,7 @@ let RecentOrdersComponent = () => {
     const orderList = useSelector((state) => state.orderReducer);
     const User = useSelector((state) => state.userReducer.user);
 
+    console.log("orderList: ", orderList);
 
     const fetchOrdersDispatch = useDispatch();
 
@@ -19,7 +20,7 @@ let RecentOrdersComponent = () => {
         <>
             { User.userName ?
                 <Fragment>
-                <h1>{`Welcome, ${User.userName}, to your Order History`}</h1>
+                <h1>{`${User.userName}, this is your Order History`}</h1>
                 { orderList && orderList.length > 0 ? 
                     <Fragment>
                         <table>

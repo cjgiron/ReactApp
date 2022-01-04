@@ -358,6 +358,44 @@ border-bottom: 2px solid orange;
 .footer a{
 color:#fff;
 }
+
+.notification {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+/* .notification:hover {
+    background: red;
+} */
+
+.notification-card {
+    outline: solid black 1px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+
+.clicked {
+    outline: solid black 1px;
+    background-color: lightblue;
+    margin: 10px;
+    pointer-events: none;
+}
+
 .userHook{
 border: 1px solid rgb(153, 117, 51);
 margin: 20px;

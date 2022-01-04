@@ -1,18 +1,21 @@
-import React, {Fragment} from "react";
+import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import CartItemComponent from "./CartItemComponent";
 import CartSummaryComponent from "./CartSummaryComponent";
 
-import { saveCartToDb } from "../../../state/cart/cartActions";
+import { saveCartToDb, getUserCart } from "../../../state/cart/cartActions";
 
 let CartComponent = (props) => {
 
     const cartList = useSelector((state)=>state.cartReducer);
     const User = useSelector((state)=>state.userReducer.user);
 
+    console.log("cartList: ", cartList)
+
     const dispatchToSaveCart = useDispatch();
+    const fetchProductsDispatch = useDispatch();
 
     let recalculate = (cartItems) => {
         let amount = 0, 
@@ -46,10 +49,14 @@ let CartComponent = (props) => {
         evt.preventDefault();
     }
 
+    // useEffect(() => {
+    //     fetchProductsDispatch(getUserCart(User._id))
+    // }, [])
+
 
     return (
         <Fragment>
-        <h1>Cart Component</h1>
+        <h1>{`${User.userName}, this is your Cart`}</h1>
         {
             cartList && cartList.length > 0 ?
             <Fragment>

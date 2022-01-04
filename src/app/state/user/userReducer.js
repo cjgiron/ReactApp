@@ -31,6 +31,8 @@ let UserReducer = (previousState = INITIAL_STATE, action) => {
 
             return {...previousState, user : action.payload.user}
 
+        case ActionTypes.SIGN_OUT_USER :
+            return INITIAL_STATE;
 
         default:
             return previousState;

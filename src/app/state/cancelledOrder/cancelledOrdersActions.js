@@ -1,9 +1,9 @@
 import * as ActionTypes from "../actionTypes";
 
 
-export const addOrderToCancelledOrders = (order) => ({
+export const addOrderToCancelledOrders = (cancelledOrder) => ({
     type: ActionTypes.CANCEL_THIS_ORDER,
-    payload: {order}
+    payload: {cancelledOrder}
 })
 
 export const emptyCancelledOrders = () => ({
@@ -15,7 +15,7 @@ export const saveCancelledOrderToDb = (order, userid)=>{
     console.log("CancelledOrder To Be Saved", order); 
     return function(dispatch) {
         //dispatch(loading(true));
-        window.fetch("http://localhost:9090/order/api/saveCancelledOrder",{
+        window.fetch("http://localhost:9090/cancelledOrder/api/saveCancelledOrder",{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -38,7 +38,7 @@ export const getCancelledOrders = (userid) => {
 
     return function(dispatch) {
         console.log("Get Cancelled Orders");
-        window.fetch("http://localhost:9090/order/api/getCancelledOrders",{
+        window.fetch("http://localhost:9090/cancelledOrder/api/getCancelledOrders",{
             method: 'POST',
             headers: {
             'Accept': 'application/json',

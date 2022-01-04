@@ -10,6 +10,10 @@ export const addUserToStore = (user) => ({    //user : is the user object dispat
     payload: {user}
 })
 
+export const signOutUser = () => ({
+    type: ActionTypes.SIGN_OUT_USER
+})
+
 //we'll use react fetch api to make ajax post call to server to signup and signin user
 export const signinUser = (userObject)=>{
     // thunk, returns function as an action

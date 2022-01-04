@@ -39,6 +39,7 @@ export const saveCartToDb = (cart, userid)=>{
         .then (response => response.json())
         .then (usercartresponse => {
             console.log("response ", usercartresponse);
+            dispatch(getUserCart(userid))
             //dispatch(loading(false));
         })
         .catch((err)=>{
